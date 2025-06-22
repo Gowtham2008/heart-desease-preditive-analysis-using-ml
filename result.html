@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e2f0d9;
+            padding: 20px;
+        }
+        .result-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .details {
+            margin-top: 20px;
+        }
+        .details p {
+            margin: 8px 0;
+        }
+        .prediction {
+            font-weight: bold;
+            font-size: 20px;
+            color: green;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Submission Successful</h2>
+        <div class="details">
+            {% for key, value in form_data.items() %}
+                <p><strong>{{ key.capitalize() }}:</strong> {{ value }}</p>
+            {% endfor %}
+        </div>
+        <div class="prediction">
+            Result: {{ prediction }}
+        </div>
+    </div>
+</body>
+</html>
